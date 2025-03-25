@@ -4,8 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PawPal - Explore Pet Companionship</title>
-  <link rel="stylesheet" href="custom-font.css"> <!-- Link to your custom font file -->
+  <link rel="stylesheet" href="custom-font.css">
   <style>
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     * {
       box-sizing: border-box;
       margin: 0;
@@ -29,10 +33,16 @@
       z-index: 100;
     }
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       font-size: 1.8rem;
       font-family: 'PawPalFont', sans-serif;
       font-weight: bold;
       color: #e75b1e;
+    }
+    .logo img {
+      height: 40px;
     }
     nav ul {
       list-style: none;
@@ -64,6 +74,11 @@
       color: #333;
       font-weight: 600;
     }
+    nav ul li a::after {
+      content: ' \25BC';
+      font-size: 0.6em;
+      margin-left: 4px;
+    }
     .hero {
       position: relative;
       height: 100vh;
@@ -85,6 +100,7 @@
       padding: 2rem;
       border-radius: 10px;
       max-width: 600px;
+      animation: fadeUp 1s ease-in-out;
     }
     .hero h1 {
       font-size: 3rem;
@@ -114,6 +130,7 @@
       padding: 3rem 2rem;
       text-align: center;
       background-color: #fff;
+      animation: fadeUp 1s ease-in-out;
     }
     .features h2, .testimonials h2, .featured h2 {
       font-size: 2.5rem;
@@ -137,8 +154,8 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
     .card img {
       width: 100%;
@@ -169,7 +186,10 @@
 </head>
 <body>
   <header>
-    <div class="logo">PawPal</div>
+    <div class="logo">
+      <img src="logo-placeholder.png" alt="PawPal Logo">
+      PawPal
+    </div>
     <nav>
       <ul>
         <li><a href="#">How It Works</a>
@@ -250,9 +270,9 @@
         <p>Luna is a playful and affectionate kitten looking for a forever home.</p>
       </div>
       <div class="card">
-        <img src="pika-placeholder.jpg" alt="Pika the rabbit">
+        <img src="pika-placeholder.jpg" alt="Pika the dog">
         <h3>Meet Pika</h3>
-        <p>Pika is a calm and cuddly rabbit who enjoys gentle company and snacks. Perfect for a quiet, loving home.</p>
+        <p>Pika is a cheerful and cuddly pup who thrives on companionship and fun playtime. He's eager to find his forever family.</p>
       </div>
     </div>
   </section>
