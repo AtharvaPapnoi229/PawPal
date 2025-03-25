@@ -10,27 +10,28 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }x
+    }
     body {
       font-family: 'Nunito', sans-serif;
-      color: #ffffff;
+      background-color: #f5f5f5;
+      color: #333;
       line-height: 1.6;
-      background-color: #111;
     }
     header {
-      background: rgba(0, 0, 0, 0.7);
+      background: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
       z-index: 100;
     }
     .logo {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: bold;
-      color: #00e5ff;
+      color: #e75b1e;
     }
     nav ul {
       list-style: none;
@@ -46,11 +47,12 @@
     nav ul li ul {
       display: none;
       position: absolute;
-      background: #333;
+      background: white;
       top: 2rem;
       left: 0;
       padding: 0.5rem;
       border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       white-space: nowrap;
     }
     nav ul li ul li {
@@ -58,12 +60,8 @@
     }
     nav ul li a {
       text-decoration: none;
-      color: #fff;
+      color: #333;
       font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #00e5ff;
     }
     .hero {
       position: relative;
@@ -80,27 +78,30 @@
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       z-index: -1;
+      filter: blur(4px) brightness(0.7);
     }
     .hero-content {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(255, 255, 255, 0.85);
       padding: 2rem;
       border-radius: 10px;
-      animation: fadeInDown 1s ease;
+      max-width: 700px;
     }
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
+      color: #333;
     }
     .hero p {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       margin-bottom: 2rem;
+      color: #555;
     }
     .btn {
       padding: 1rem 2rem;
-      background-color: #00e5ff;
-      color: #000;
+      background-color: #e75b1e;
+      color: #fff;
       border: none;
       border-radius: 30px;
       font-size: 1.1rem;
@@ -108,18 +109,18 @@
       transition: background 0.3s, transform 0.3s;
     }
     .btn:hover {
-      background-color: #00c9d4;
+      background-color: #d44a12;
       transform: scale(1.05);
     }
     .features, .testimonials, .featured {
       padding: 3rem 2rem;
       text-align: center;
-      background: rgba(0, 0, 0, 0.6);
+      background-color: #fff;
     }
     .features h2, .testimonials h2, .featured h2 {
       font-size: 2.5rem;
       margin-bottom: 2rem;
-      color: #00e5ff;
+      color: #e75b1e;
     }
     .cards {
       display: flex;
@@ -129,16 +130,17 @@
       margin-top: 1rem;
     }
     .card {
-      background: rgba(255, 255, 255, 0.1);
+      background: #fff;
       border-radius: 10px;
       padding: 1.5rem;
       width: 300px;
       transition: transform 0.3s, box-shadow 0.3s;
-      color: white;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .card:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
     .card img {
       width: 100%;
@@ -151,7 +153,7 @@
       margin: 0 auto;
     }
     footer {
-      background: rgba(0,0,0,0.8);
+      background: #f8713b;
       color: white;
       padding: 2rem;
       display: flex;
@@ -162,12 +164,8 @@
       margin-bottom: 1rem;
     }
     .footer-section a {
-      color: #00e5ff;
+      color: white;
       margin-left: 1rem;
-    }
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -210,6 +208,57 @@
     </div>
   </section>
 
-  <!-- rest of the site remains unchanged -->
+  <section class="features">
+    <h2>Ways to Connect</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="walk-placeholder.jpg" alt="Walk a pet">
+        <h3>Walk</h3>
+        <p>Enjoy relaxing outdoor time with friendly dogs or cats. Great for stress relief and bonding!</p>
+      </div>
+      <div class="card">
+        <img src="foster-placeholder.jpg" alt="Foster a pet">
+        <h3>Foster</h3>
+        <p>Provide temporary love and shelter to pets waiting for their forever homes.</p>
+      </div>
+      <div class="card">
+        <img src="adopt-placeholder.jpg" alt="Adopt a pet">
+        <h3>Adopt</h3>
+        <p>Open your heart and home to a lifelong companion. Adoption changes lives.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>Testimonials</h2>
+    <div class="cards">
+      <div class="card">"PawPal has enriched our lives. Our walks are the highlights of our day!" - Alex Johnson</div>
+      <div class="card">"Fostering with PawPal has been a rewarding experience." - Samantha Lee</div>
+      <div class="card">"Adopting through PawPal was seamless and joyful!" - Michael Chen</div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <h2>Featured Pet</h2>
+    <div class="card">
+      <img src="luna-placeholder.jpg" alt="Luna the kitten">
+      <h3>Meet Luna</h3>
+      <p>Luna is a playful and affectionate kitten looking for a forever home.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-section">
+      <p>Contact Us</p>
+      <p>Email: support@pawpal.com</p>
+      <p>Phone: +1 (800) 555-0199</p>
+    </div>
+    <div class="footer-section">
+      <p>Follow Us</p>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
 </body>
 </html>
