@@ -10,6 +10,11 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    @keyframes highlight {
+      0% { background-color: #fff; }
+      50% { background-color: #ffe5d4; }
+      100% { background-color: #fff; }
+    }
     * {
       box-sizing: border-box;
       margin: 0;
@@ -105,7 +110,7 @@
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: #333;
+      color: #e75b1e;
     }
     .hero p {
       font-size: 1.3rem;
@@ -137,6 +142,12 @@
       margin-bottom: 2rem;
       color: #e75b1e;
     }
+    .features p.extra, .testimonials p.extra, .featured p.extra {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 1rem auto;
+      color: #777;
+    }
     .cards {
       display: flex;
       justify-content: center;
@@ -152,10 +163,14 @@
       transition: transform 0.3s, box-shadow 0.3s;
       color: #333;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: highlight 3s ease-in-out 1;
     }
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .card h3 {
+      color: #e75b1e;
     }
     .card img {
       width: 100%;
@@ -228,6 +243,7 @@
 
   <section class="features">
     <h2>Ways to Connect</h2>
+    <p class="extra">Whether you're looking for a playful afternoon stroll or considering long-term companionship, we offer a path for every pet lover. Our three-step model lets you explore responsibly and joyfully.</p>
     <div class="cards">
       <div class="card">
         <img src="walk-placeholder.jpg" alt="Walk a pet">
@@ -249,6 +265,7 @@
 
   <section class="testimonials">
     <h2>Testimonials</h2>
+    <p class="extra">Here’s what our users say about their PawPal journey — from their first pet walk to permanent family additions.</p>
     <div class="cards">
       <div class="card">"PawPal has enriched our lives. Our walks are the highlights of our day!" - Alex Johnson</div>
       <div class="card">"Fostering with PawPal has been a rewarding experience." - Samantha Lee</div>
@@ -258,6 +275,7 @@
 
   <section class="featured">
     <h2>Featured Pets</h2>
+    <p class="extra">These adorable companions are currently looking for homes. Read their stories and see if one of them is your match!</p>
     <div class="cards">
       <div class="card">
         <img src="scooby-placeholder.jpg" alt="Scooby the dog">
