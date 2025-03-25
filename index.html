@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PawPal - Explore Pet Companionship</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="custom-font.css"> <!-- Link to your custom font file -->
   <style>
     * {
       box-sizing: border-box;
@@ -12,7 +12,7 @@
       padding: 0;
     }
     body {
-      font-family: 'Nunito', sans-serif;
+      font-family: 'PawPalFont', 'Nunito', sans-serif;
       background-color: #f5f5f5;
       color: #333;
       line-height: 1.6;
@@ -29,7 +29,8 @@
       z-index: 100;
     }
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      font-family: 'PawPalFont', sans-serif;
       font-weight: bold;
       color: #e75b1e;
     }
@@ -68,25 +69,22 @@
       height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
+      justify-content: space-between;
+      text-align: left;
+      padding: 0 5%;
       overflow: hidden;
+      gap: 2rem;
     }
     .hero video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+      width: 50%;
       height: 100%;
       object-fit: contain;
-      z-index: -1;
-      filter: blur(4px) brightness(0.7);
     }
     .hero-content {
-      background-color: rgba(255, 255, 255, 0.85);
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 2rem;
       border-radius: 10px;
-      max-width: 700px;
+      max-width: 600px;
     }
     .hero h1 {
       font-size: 3rem;
@@ -149,8 +147,8 @@
       border-radius: 10px;
       margin-bottom: 1rem;
     }
-    .featured .card {
-      margin: 0 auto;
+    .featured .cards {
+      justify-content: center;
     }
     footer {
       background: #f8713b;
@@ -197,15 +195,15 @@
   </header>
 
   <section class="hero">
-    <video autoplay muted loop>
-      <source src="pawpal-intro.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
     <div class="hero-content">
       <h1>Join the PawPal Community</h1>
       <p>Explore the joys of pet ownership through walks, fostering, or adoption. Choose your path, meet loving animals, and take the first step toward a rewarding journey with pets.</p>
       <button class="btn">Start Your Paw Journey</button>
     </div>
+    <video autoplay muted loop>
+      <source src="pawpal-intro.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </section>
 
   <section class="features">
@@ -239,11 +237,23 @@
   </section>
 
   <section class="featured">
-    <h2>Featured Pet</h2>
-    <div class="card">
-      <img src="luna-placeholder.jpg" alt="Luna the kitten">
-      <h3>Meet Luna</h3>
-      <p>Luna is a playful and affectionate kitten looking for a forever home.</p>
+    <h2>Featured Pets</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="scooby-placeholder.jpg" alt="Scooby the dog">
+        <h3>Meet Scooby</h3>
+        <p>Scooby is an energetic and loyal dog who loves outdoor play and belly rubs. He’s looking for an adventure buddy!</p>
+      </div>
+      <div class="card">
+        <img src="luna-placeholder.jpg" alt="Luna the kitten">
+        <h3>Meet Luna</h3>
+        <p>Luna is a playful and affectionate kitten looking for a forever home.</p>
+      </div>
+      <div class="card">
+        <img src="pika-placeholder.jpg" alt="Pika the rabbit">
+        <h3>Meet Pika</h3>
+        <p>Pika is a calm and cuddly rabbit who enjoys gentle company and snacks. Perfect for a quiet, loving home.</p>
+      </div>
     </div>
   </section>
 
