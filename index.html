@@ -13,25 +13,26 @@
     }
     body {
       font-family: 'Nunito', sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
+      color: #ffffff;
       line-height: 1.6;
+      background: url('pawpal-intro.mp4') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(8px);
     }
     header {
-      background: white;
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
       z-index: 100;
     }
     .logo {
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: bold;
-      color: #e75b1e;
+      color: #00e5ff;
     }
     nav ul {
       list-style: none;
@@ -47,63 +48,62 @@
     nav ul li ul {
       display: none;
       position: absolute;
-      background: white;
+      background: #333;
       top: 2rem;
       left: 0;
       padding: 0.5rem;
       border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     nav ul li ul li {
       padding: 0.5rem 1rem;
     }
     nav ul li a {
       text-decoration: none;
-      color: #333;
+      color: #fff;
       font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #00e5ff;
     }
     .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 3rem 2rem;
-      background: #fff;
-    }
-    .hero-text {
-      flex: 1;
-      padding-right: 2rem;
-    }
-    .hero video {
-      width: 100%;
-      max-width: 500px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 10px;
+      padding: 4rem 2rem;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
     }
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
       margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
     }
     .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease;
     }
     .btn {
-      padding: 0.8rem 1.5rem;
-      background-color: #e75b1e;
-      color: white;
+      padding: 1rem 2rem;
+      background-color: #00e5ff;
+      color: #000;
       border: none;
       border-radius: 30px;
-      font-size: 1rem;
+      font-size: 1.1rem;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.3s;
     }
     .btn:hover {
-      background-color: #d44a12;
+      background-color: #00c9d4;
+      transform: scale(1.05);
     }
     .features, .testimonials, .featured {
-      padding: 2rem;
+      padding: 3rem 2rem;
       text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .features h2, .testimonials h2, .featured h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #00e5ff;
     }
     .cards {
       display: flex;
@@ -113,15 +113,16 @@
       margin-top: 1rem;
     }
     .card {
-      background: white;
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
-      padding: 1rem;
+      padding: 1.5rem;
       width: 300px;
       transition: transform 0.3s, box-shadow 0.3s;
+      color: white;
     }
     .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
     }
     .card img {
       width: 100%;
@@ -130,8 +131,11 @@
       border-radius: 10px;
       margin-bottom: 1rem;
     }
+    .featured .card {
+      margin: 0 auto;
+    }
     footer {
-      background: #f8713b;
+      background: rgba(0,0,0,0.8);
       color: white;
       padding: 2rem;
       display: flex;
@@ -142,8 +146,16 @@
       margin-bottom: 1rem;
     }
     .footer-section a {
-      color: white;
+      color: #00e5ff;
       margin-left: 1rem;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -175,33 +187,28 @@
   </header>
 
   <section class="hero">
-    <div class="hero-text">
-      <h1>Join the PawPal Community</h1>
-      <p>Explore the joys of pet ownership through walks, fostering, or adoption.</p>
-      <button class="btn">Start Your Paw Journey</button>
-    </div>
-    <video autoplay muted loop>
-      <source src="pawpal-intro.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <h1>Join the PawPal Community</h1>
+    <p>Explore the joys of pet ownership through walks, fostering, or adoption. Choose your path, meet loving animals, and take the first step toward a rewarding journey with pets.</p>
+    <button class="btn">Start Your Paw Journey</button>
   </section>
 
   <section class="features">
+    <h2>Ways to Connect</h2>
     <div class="cards">
       <div class="card">
         <img src="walk-placeholder.jpg" alt="Walk a pet">
         <h3>Walk</h3>
-        <p>Enjoy leisurely walks with our friendly pets and get some fresh air.</p>
+        <p>Enjoy relaxing outdoor time with friendly dogs or cats. Great for stress relief and bonding!</p>
       </div>
       <div class="card">
         <img src="foster-placeholder.jpg" alt="Foster a pet">
         <h3>Foster</h3>
-        <p>Provide a temporary home and lots of love to pets in need.</p>
+        <p>Provide temporary love and shelter to pets waiting for their forever homes.</p>
       </div>
       <div class="card">
         <img src="adopt-placeholder.jpg" alt="Adopt a pet">
         <h3>Adopt</h3>
-        <p>Find your forever friend and give them a loving home.</p>
+        <p>Open your heart and home to a lifelong companion. Adoption changes lives.</p>
       </div>
     </div>
   </section>
