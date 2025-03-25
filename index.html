@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PawPal - Explore Pet Companionship</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e75b1e;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li:hover ul {
+      display: block;
+    }
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background: white;
+      top: 2rem;
+      left: 0;
+      padding: 0.5rem;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    nav ul li ul li {
+      padding: 0.5rem 1rem;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3rem 2rem;
+      background: #fff;
+    }
+    .hero-text {
+      flex: 1;
+    }
+    .hero video {
+      width: 50%;
+      border-radius: 10px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .btn {
+      padding: 0.8rem 1.5rem;
+      background-color: #e75b1e;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #d44a12;
+    }
+    .features, .testimonials, .featured {
+      padding: 2rem;
+      text-align: center;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #f8713b;
+      color: white;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .footer-section {
+      margin-bottom: 1rem;
+    }
+    .footer-section a {
+      color: white;
+      margin-left: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">PawPal</div>
+    <nav>
+      <ul>
+        <li><a href="#">How It Works</a>
+          <ul>
+            <li>Walk a dog</li>
+            <li>Walk a cat</li>
+          </ul>
+        </li>
+        <li><a href="#">Meet Pets</a>
+          <ul>
+            <li>Foster a dog</li>
+            <li>Foster a cat</li>
+          </ul>
+        </li>
+        <li><a href="#">Sign Up</a>
+          <ul>
+            <li>Adopt a dog</li>
+            <li>Adopt a cat</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Join the PawPal Community</h1>
+      <p>Explore the joys of pet ownership through walks, fostering, or adoption.</p>
+      <button class="btn">Start Your Paw Journey</button>
+    </div>
+    <video autoplay muted loop>
+      <source src="pawpal-intro.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section class="features">
+    <div class="cards">
+      <div class="card">
+        <h3>Walk</h3>
+        <p>Enjoy leisurely walks with our friendly pets and get some fresh air.</p>
+      </div>
+      <div class="card">
+        <h3>Foster</h3>
+        <p>Provide a temporary home and lots of love to pets in need.</p>
+      </div>
+      <div class="card">
+        <h3>Adopt</h3>
+        <p>Find your forever friend and give them a loving home.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>Testimonials</h2>
+    <div class="cards">
+      <div class="card">"PawPal has enriched our lives. Our walks are the highlights of our day!" - Alex Johnson</div>
+      <div class="card">"Fostering with PawPal has been a rewarding experience." - Samantha Lee</div>
+      <div class="card">"Adopting through PawPal was seamless and joyful!" - Michael Chen</div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <h2>Featured Pet</h2>
+    <div class="card">
+      <h3>Meet Luna</h3>
+      <p>Luna is a playful and affectionate kitten looking for a forever home.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-section">
+      <p>Contact Us</p>
+      <p>Email: support@pawpal.com</p>
+      <p>Phone: +1 (800) 555-0199</p>
+    </div>
+    <div class="footer-section">
+      <p>Follow Us</p>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+</body>
+</html>
